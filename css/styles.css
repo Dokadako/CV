@@ -4,6 +4,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+html, body {
+  height: 100%; /* Устанавливаем высоту для html и body */
+  margin: 0; /* Убираем отступы */
+}
+
 @font-face {
   font-family: "MyCustomFont";
   src: url("css/ofont.ru_Magnolia.ttf");
@@ -16,6 +22,16 @@ body {
   line-height: 1.6;
   padding: 0;
   margin: 0;
+}
+
+.container {
+  display: flex; /* Используем флексбокс */
+  flex-direction: column; /* Устанавливаем вертикальное направление */
+  min-height: 100vh; /* Задаем минимальную высоту 100% от высоты окна */
+}
+
+main {
+  flex: 1; /* Позволяем основному контенту занимать доступное пространство */
 }
 
 /* Header */
@@ -212,13 +228,12 @@ footer {
   color: #EAE7DC;
   text-align: center;
   padding: 20px 0;
-  margin-top: 40px;
+  margin-top: 40px; /* Убираем этот отступ */
 }
 
 footer p {
   font-size: 1rem;
 }
-
 a {
   text-decoration: none;
 }
