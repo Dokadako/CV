@@ -33,30 +33,7 @@ body {
 main {
   flex: 1; /* Позволяем основному контенту занимать доступное пространство */
 }
-/* Гамбургер-меню - стили для маленьких экранов */
-.hamburger-menu {
-  display: none; /* Скрываем по умолчанию */
-  flex-direction: column;
-  justify-content: space-around;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-}
 
-.hamburger-menu span {
-  width: 100%;
-  height: 4px;
-  background-color: white;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-header nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
 /* Header */
 header {
   background-color: #D8C3A5; /* Теплый бежевый */
@@ -319,41 +296,9 @@ a {
 }
 
 @media (max-width: 600px) {
-
-  /* Показываем гамбургер-меню на маленьких экранах */
-  .hamburger-menu {
-    display: flex;
-    position: relative;
-  }
-
-  /* Изначально скрываем навигацию */
   header nav ul {
-    display: none;
     flex-direction: column;
-    background-color: #8E8D8A;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 100%;
-    text-align: center;
-  }
-
-  /* Показываем меню при наведении на гамбургер */
-  .hamburger-menu:hover + nav ul {
-    display: flex;
-  }
-
-  /* Стили для элементов меню */
-  header nav ul li {
-    padding: 15px 0;
-    border-bottom: 1px solid #D8C3A5;
-  }
-
-  header nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: 500;
+    gap: 10px;
   }
 
   .profile-picture {
