@@ -237,6 +237,33 @@ footer p {
 a {
   text-decoration: none;
 }
+/* Контейнер для карты и адреса */
+.contact-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+/* Стили для карты */
+.map {
+  flex: 2;
+  height: 450px; /* Высота карты */
+}
+
+/* Стили для адреса */
+.address {
+  flex: 1;
+  font-size: 1.3rem;
+  color: white;
+  background-color: #D8C3A5;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 /* Адаптивность */
 @media (max-width: 768px) {
   header h1 {
@@ -249,6 +276,19 @@ a {
 
   form {
     padding: 20px;
+  }
+  .contact-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .map {
+    width: 100%;
+    height: 300px; /* Уменьшаем высоту карты на мобильных устройствах */
+  }
+
+  .address {
+    margin-top: 20px;
   }
 }
 
