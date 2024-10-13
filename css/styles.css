@@ -1,0 +1,259 @@
+/* Основные стили */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "MyCustomFont";
+  src: url("css/ofont.ru_Magnolia.ttf");
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  background-color: #EAE7DC; /* Мягкий светлый фон */
+  color: #8E8D8A; /* Темно-серый текст */
+  line-height: 1.6;
+  padding: 0;
+  margin: 0;
+}
+
+/* Header */
+header {
+  background-color: #D8C3A5; /* Теплый бежевый */
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+  color: #E85A4F; /* Красный оттенок для акцентов */
+}
+
+/* Главный контент */
+main {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+main h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #E85A4F; /* Красный для заголовков */
+}
+
+h4, h3 {
+  color: #8E8D8A;
+}
+
+main p {
+  font-size: 1.1rem;
+  color: #8E8D8A; /* Темно-серый для основного текста */
+}
+
+.profile-picture {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #E98074; /* Теплый розово-красный */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+
+  animation-duration: 2s;
+  animation-name: spin;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  50% { scale: 2; transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Стиль для сетки (семья, хобби) */
+.family-grid, .hobbies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* Основные стили для сетки */
+.family-grid div, .hobbies-grid div {
+  position: relative; /* Для позиционирования текста */
+  background-color: #D8C3A5;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* Чтобы текст не выходил за пределы блока */
+}
+
+.family-grid div:hover, .hobbies-grid div:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.family-grid img, .hobbies-grid img {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 10px;
+}
+
+/* Скрываем текст и задаём начальное состояние */
+.family-grid p, .hobbies-grid p {
+  position: absolute;
+  bottom: -50px; /* Сдвигаем текст вниз за пределы блока */
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный фон для контраста */
+  color: #F2F2F2;
+  font-weight: 500;
+  text-align: center;
+  opacity: 0; /* Прозрачность 0, чтобы текст был невидим */
+  transition: bottom 0.3s ease, opacity 0.3s ease;
+}
+
+/* При наведении курсора на блок с изображением */
+.family-grid div:hover p, .hobbies-grid div:hover p {
+  bottom: 0; /* Поднимаем текст на уровень блока */
+  opacity: 1; /* Делаем текст видимым */
+}
+
+
+/* Таблица на странице образования */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th, table td {
+  padding: 15px;
+  border: 1px solid black;
+  text-align: left;
+  color: #8E8D8A;
+}
+
+table th {
+  background-color: #D8C3A5; /* Бежевый для заголовков таблицы */
+  color: #E85A4F;
+  font-weight: bold;
+}
+
+/* Контактная форма */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #D8C3A5; /* Бежевый фон формы */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+  font-size: 1rem;
+  color: #EDF5E1;
+  font-weight: bold;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 15px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+
+form input:focus, form textarea:focus {
+  border-color: #E98074; /* Розово-красный акцент */
+}
+
+form button {
+  padding: 15px 30px;
+  background-color: #E98074; /* Теплый акцент для кнопки */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #E85A4F; /* Больше контраста при наведении */
+}
+
+/* Footer */
+footer {
+  background-color: #8E8D8A; /* Темно-серый фон */
+  color: #EAE7DC;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+}
+
+footer p {
+  font-size: 1rem;
+}
+
+a {
+  text-decoration: none;
+}
+/* Адаптивность */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  main h2 {
+    font-size: 1.8rem;
+  }
+
+  form {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  header nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .profile-picture {
+    width: 150px;
+    height: 150px;
+  }
+
+  main h2 {
+    font-size: 1.6rem;
+  }
+}
